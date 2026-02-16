@@ -35,40 +35,108 @@ Fonts here are used by both the loc tool and the game.
 ----------------------------------------------------------------------------------
 */
 
+/*---- Tajawal Arabic Font - Main Game Font --------------------------------*/
+@font-face {
+    font-family: 'tiny';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'small_tight';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'small_harsh';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'regular_short';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'title_tall';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'title_news';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'title_thick';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ui_regular';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'large';
+    src: url('../fonts/Tajawal-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /*---- tiny -------------------------------------------------*/
-@font-face { font-family: 'tiny'; src: url('../fonts/MiniKylie-U--misaki_gothic.ttf'); }
+/* تم استبداله بخط Tajawal */
 .font-tiny { font-family: 'tiny'; font-size: 8px; line-height: 8px; }
 
 /*---- small -------------------------------------------------*/
-@font-face { font-family: 'small_tight'; src: url('../fonts/AtariSmall-U--misaki_gothic--88Zen.ttf'); }
 .font-small_tight { font-family: 'small_tight'; font-size: 8px; line-height: 8px; }
-
-@font-face { font-family: 'small_harsh'; src: url('../fonts/5mikropix--misaki_gothic.ttf'); }
 .font-small_harsh { font-family: 'small_harsh'; font-size: 8px; line-height: 9px; }
 
 /*---- regular -------------------------------------------------*/
-@font-face { font-family: 'regular'; src: url('../fonts/BMmini-U--88Zen--misaki_gothic.ttf'); }
 .font-regular, body { font-family: 'regular'; font-size: 8px; line-height: 8px; }
-
-@font-face { font-family: 'regular_short'; src: url('../fonts/04B03-U--misaki_gothic.ttf'); }
 .font-regular_short { font-family: 'regular_short'; font-size: 8px; line-height: 8px; }
 
 /*---- title -------------------------------------------------*/
-@font-face { font-family: 'title_tall'; src: url('../fonts/pixelplay--shnmk14.ttf'); }
 .font-title_tall { font-family: 'title_tall'; font-size: 16px; line-height: 16px; }
-
-@font-face { font-family: 'title_news'; src: url('../fonts/MotorolaScreentype-U--shnmk16b.ttf'); } 
 .font-title_news { font-family: 'title_news'; font-size: 16px; line-height: 16px; }
-
-@font-face { font-family: 'title_thick'; src: url('../fonts/ChixaDemiBold--shnmk12b.ttf'); }
 .font-title_thick { font-family: 'title_thick'; font-size: 14px; line-height: 11px; }
 
 /*---- ui -------------------------------------------------*/
-@font-face { font-family: 'ui_regular'; src: url('../fonts/NotNokia-U--knj10b.ttf'); }
 .font-ui_regular { font-family: 'ui_regular'; font-size: 8px; line-height: 8px; }
 
 /*---- large -------------------------------------------------*/
-@font-face { font-family: 'large'; src: url('../fonts/Resource-U--knj10.ttf'); }
 .font-large { font-family: 'large'; font-size: 8px; line-height: 10px; }
 
 /* 
@@ -114,10 +182,38 @@ Fonts below here are used only by the loc tool and don't appear in the game.
 @font-face { font-family: 'news'; src: url('../fonts/PlainBlack--EncientGermanGothic.ttf'); }
 .font-news { font-family: 'news'; font-size: 23px; line-height: 34px; font-weight: normal; }
 
+/* 
+----------------------------------------------------------------------------------
+RTL Support for Arabic Language
+----------------------------------------------------------------------------------
+*/
+
+/* دعم الكتابة من اليمين لليسار */
+[dir="rtl"],
+[lang="ar"],
+[lang="ar"] body,
+[lang="ar"] .font-tiny,
+[lang="ar"] .font-small_tight,
+[lang="ar"] .font-small_harsh,
+[lang="ar"] .font-regular,
+[lang="ar"] .font-regular_short,
+[lang="ar"] .font-title_tall,
+[lang="ar"] .font-title_news,
+[lang="ar"] .font-title_thick,
+[lang="ar"] .font-ui_regular,
+[lang="ar"] .font-large {
+    direction: rtl;
+    text-align: right;
+}
+
+/* تحسين عرض الأرقام في النصوص العربية */
+[lang="ar"] .number,
+[lang="ar"] [class*="digit"] {
+    unicode-bidi: isolate;
+}
+
 body {
     font-smooth: never;
     -webkit-font-smoothing: none;
-	text-rendering: optimizeSpeed !important;
+    text-rendering: optimizeSpeed !important;
 }
-
-
